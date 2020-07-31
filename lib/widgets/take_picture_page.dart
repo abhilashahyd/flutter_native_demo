@@ -83,7 +83,7 @@ class _TakePicturePageState extends State<TakePicturePage> {
               if (snapshot.connectionState == ConnectionState.done) {
                 return CameraPreview(_cameraController);
               } else {
-                return Center(child: CircularProgressIndicator());
+                return Center(child: CircularProgressIndicator(backgroundColor: Colors.green,));
               }
             },
           ),
