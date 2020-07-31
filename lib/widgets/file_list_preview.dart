@@ -5,8 +5,8 @@ import 'package:flutter/widgets.dart';
 
 class FileListPreview extends StatelessWidget {
   const FileListPreview(
-    @required this.attachmentList,
-    @required this.removeImage,
+    this.attachmentList,
+    this.removeImage,
   );
 
   final List<File> attachmentList;
@@ -24,6 +24,7 @@ class FileListPreview extends StatelessWidget {
           // return new  Container(child: FileImage(attachFile));
           children: [
             Container(
+
               height: 100,
               width: 300,
               child: ListView.builder(

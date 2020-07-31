@@ -13,7 +13,7 @@ class TakePicturePage extends StatefulWidget {
 
 class _TakePicturePageState extends State<TakePicturePage> {
   final fileName = DateTime.now().millisecondsSinceEpoch.toString();
-  String vidPath;
+  var vidPath;
   CameraController _cameraController;
   Future<void> _initializeCameraControllerFuture;
   int _selectedIndex = 0;
@@ -93,8 +93,8 @@ class _TakePicturePageState extends State<TakePicturePage> {
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: FloatingActionButton(
-                  backgroundColor: Colors.orange,
-                  // child: Icon(Icons.camera_alt, color: Colors.white),
+                  backgroundColor: Colors.green,
+                  child:   _selectedIndex == 1 ? _isRec == true?Icon(Icons.pause, color: Colors.white):Icon(Icons.play_arrow, color: Colors.white) : Icon(Icons.camera, color: Colors.white),
                   onPressed: () {
                     _takePicture(context);
                   },
@@ -105,7 +105,7 @@ class _TakePicturePageState extends State<TakePicturePage> {
           _isRec == true
               ? SafeArea(
                   child: Container(
-                    height: 40,
+                    height: 30,
                     // alignment: Alignment.topLeft,
                     decoration: BoxDecoration(
                       color: Color(0xFFEE4400),
@@ -140,7 +140,7 @@ class _TakePicturePageState extends State<TakePicturePage> {
           ),
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: Colors.amber[800],
+        selectedItemColor: Colors.green,
         onTap: _onItemTapped,
       ),
     );
