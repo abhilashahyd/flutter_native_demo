@@ -3,15 +3,17 @@ import 'package:url_launcher/url_launcher.dart'; // call with dial pad
 import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 
 class MakeACall extends StatelessWidget {
-  Future<void> _makePhoneCall(String contact, String mode) async {
-    if (mode == 'direct') {
+  Future<void> _makePhoneCall(String contact, bool direct) async {
+    if (direct == true) {
       bool res = await FlutterPhoneDirectCaller.callNumber(contact);
       print(res);
     } else {
-      if (await canLaunch(contact)) {
-        await launch(contact);
+      String telScheme = 'tel:$contact';
+
+      if (await canLaunch(telScheme)) {
+        await launch(telScheme);
       } else {
-        throw 'Could not launch $contact';
+        throw 'Could not launch $telScheme';
       }
     }
   }
@@ -35,7 +37,7 @@ class MakeACall extends StatelessWidget {
                   ],
                 )),
           )),
-      onTap: () => _makePhoneCall('0123456789', 'direct'),
+      onTap: () => _makePhoneCall('0123456789', true),
     );
   }
 }
