@@ -1,10 +1,10 @@
 # flutter_native_demo
 
-A new Flutter project.
+A Flutter project including demo of various Flutter plugins to handle native device capabilities or other such requirements.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+This project includes the plugin related code in the widgets folder.
 
 A few resources to get you started if this is your first Flutter project:
 
