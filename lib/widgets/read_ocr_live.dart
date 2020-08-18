@@ -15,7 +15,7 @@ class _ReadOCRLiveState extends State<ReadOCRLive> {
   String _textValue = "sample";
   @override
   Widget build(BuildContext context) {
-    return     GestureDetector(
+    return GestureDetector(
       child: Padding(
           padding: const EdgeInsets.only(top: 40, left: 130),
           child: Card(
@@ -27,13 +27,12 @@ class _ReadOCRLiveState extends State<ReadOCRLive> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Icon(Icons.camera),
-                    Text("Scan",
-                        style: TextStyle(fontWeight: FontWeight.bold))
+                    Text("Scan", style: TextStyle(fontWeight: FontWeight.bold))
                   ],
                 )),
           )
 //
-      ),
+          ),
       onTap: () => _read(),
     );
   }
@@ -55,10 +54,9 @@ class _ReadOCRLiveState extends State<ReadOCRLive> {
       print('top ${texts[1].language}');
 
       texts.forEach((val) => {
-//             print(val.value),
             values.add(val.value.toString()),
           });
-//      widget.getValue(values);
+      widget.getValue(values);
       if (!mounted) return;
     } on Exception {
       texts.add(new OcrText('Failed to recognize text.'));
