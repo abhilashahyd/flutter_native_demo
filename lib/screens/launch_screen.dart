@@ -6,6 +6,7 @@ import 'package:camera/camera.dart';
 import 'package:flutter_native_demo/widgets/take_picture_page.dart';
 import 'package:flutter_native_demo/widgets/file_list_preview.dart';
 import 'package:flutter_native_demo/widgets/make_a_call.dart';
+import 'package:flutter_native_demo/widgets/read_ocr_live.dart';
 
 class LaunchScreen extends StatefulWidget {
   @override
@@ -37,6 +38,11 @@ class _LaunchScreenState extends State<LaunchScreen> {
     setState(() {
       attachmentList.remove(pickedFile);
     });
+  }
+
+  Function getValue(List<String> values) {
+    print(values);
+    //You can include logic to handle the values
   }
 
   @override
@@ -79,7 +85,8 @@ class _LaunchScreenState extends State<LaunchScreen> {
                     child: FileListPreview(attachmentList, _removeImage),
                   )
                 : SizedBox(),
-            MakeACall()
+            MakeACall(),
+            ReadOCRLive(getValue),
           ],
         ),
       ),
