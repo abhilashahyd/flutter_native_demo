@@ -15,12 +15,26 @@ class _ReadOCRLiveState extends State<ReadOCRLive> {
   String _textValue = "sample";
   @override
   Widget build(BuildContext context) {
-    return FlatButton(
-      onPressed: _read,
-      child: Icon(
-        Icons.chrome_reader_mode,
-        color: Colors.white,
+    return     GestureDetector(
+      child: Padding(
+          padding: const EdgeInsets.only(top: 40, left: 130),
+          child: Card(
+            elevation: 15,
+            child: Container(
+                height: 80,
+                width: 100,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(Icons.camera),
+                    Text("Scan",
+                        style: TextStyle(fontWeight: FontWeight.bold))
+                  ],
+                )),
+          )
+//
       ),
+      onTap: () => _read(),
     );
   }
 
