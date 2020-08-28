@@ -24,7 +24,6 @@ class FileListPreview extends StatelessWidget {
           // return new  Container(child: FileImage(attachFile));
           children: [
             Container(
-
               height: 100,
               width: 300,
               child: ListView.builder(

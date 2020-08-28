@@ -22,11 +22,11 @@ class MakeACall extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       child: Padding(
-          padding: const EdgeInsets.only(top: 40, left: 130),
+          padding: const EdgeInsets.only(top: 40, left: 10),
           child: Card(
             elevation: 15,
             child: Container(
-                height: 80,
+                height: 90,
                 width: 100,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
