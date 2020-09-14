@@ -27,15 +27,17 @@ class _FacesState extends State<Faces> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Icon(Icons.face),
-                    Text("Face Detect", style: TextStyle(fontWeight: FontWeight.bold))
+                    Text("Face Detect",
+                        style: TextStyle(fontWeight: FontWeight.bold))
                   ],
                 )),
           )
 //
-      ),
+          ),
       onTap: () => _face(),
     );
   }
+
   Future<Null> _face() async {
     List<Face> faces = [];
     int _cameraFace = FlutterMobileVision.CAMERA_FRONT;
@@ -56,6 +58,7 @@ class _FacesState extends State<Faces> {
         camera: _cameraFace,
         fps: 15.0,
       );
+      // print(faces);
     } on Exception {
       faces.add(Face(-1));
     }
@@ -65,5 +68,3 @@ class _FacesState extends State<Faces> {
     widget.getFace(_faces);
   }
 }
-
-

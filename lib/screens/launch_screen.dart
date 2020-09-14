@@ -51,19 +51,20 @@ class _LaunchScreenState extends State<LaunchScreen> {
     // you can include the logic to handle the ocr values
   }
   Function getFace(List<Face> faces) {
-//    faces.forEach((element) {
-//      print(element.right);
-//      print(element.left);
-//      print(element.eulerZ);
-//      print(element.eulerY);
-//      print(element.id);
-//      print(element.leftEyeOpenProbability);
-//      print(element.smilingProbability);
-//      print(element.rightEyeOpenProbability);
-//    });
+    // faces.forEach((element) {
+    //   // print(element.right);
+    //   // print(element.left);
+    //   // print(element.eulerZ);
+    //   // print(element.eulerY);
+    //   // print(element.id);
+    //   // print(element.leftEyeOpenProbability);
+    //   // print(element.smilingProbability);
+    //   // print(element.rightEyeOpenProbability);
+    // });
 //    print(values.length);
     //You can include logic to handle the face values
   }
+
   Function getResult(List<Barcode> barcode) {
 //    print(barcode);
 //  barcode.forEach((element) {
@@ -178,37 +179,37 @@ class _LaunchScreenState extends State<LaunchScreen> {
                         MaterialPageRoute(builder: (context) => ScreenRec()))),
               ],
             ),
-            attachmentList.length >= 1
-                ? Padding(
-                    padding: const EdgeInsets.all(10),
-                    child: FileListPreview(attachmentList, _removeImage),
-                  )
-                : SizedBox(),
-            MakeACall(),
-            ReadOCRLive(getValue),
-            GestureDetector(
-              child: Padding(
-                  padding: const EdgeInsets.only(top: 40, left: 130),
-                  child: Card(
-                    elevation: 15,
-                    child: Container(
-                        height: 80,
-                        width: 100,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Icon(Icons.camera),
-                            Text("Bluetooth devices",
-                                style: TextStyle(fontWeight: FontWeight.bold))
-                          ],
-                        )),
-                  )),
-              onTap: () => Navigator.popAndPushNamed(
-                //pushNamed(
-                context,
-                FlutterBlueApp.routeName,
-              ),
-            ),
+            // attachmentList.length >= 1
+            //     ? Padding(
+            //         padding: const EdgeInsets.all(10),
+            //         child: FileListPreview(attachmentList, _removeImage),
+            //       )
+            //     : SizedBox(),
+            // MakeACall(),
+            // ReadOCRLive(getValue),
+            // GestureDetector(
+            //   child: Padding(
+            //       padding: const EdgeInsets.only(top: 40, left: 130),
+            //       child: Card(
+            //         elevation: 15,
+            //         child: Container(
+            //             height: 80,
+            //             width: 100,
+            //             child: Column(
+            //               mainAxisAlignment: MainAxisAlignment.center,
+            //               children: [
+            //                 Icon(Icons.camera),
+            //                 Text("Bluetooth devices",
+            //                     style: TextStyle(fontWeight: FontWeight.bold))
+            //               ],
+            //             )),
+            //       )),
+            //   onTap: () => Navigator.popAndPushNamed(
+            //     //pushNamed(
+            //     context,
+            //     FlutterBlueApp.routeName,
+            //   ),
+            // ),
           ],
         ),
       ),
