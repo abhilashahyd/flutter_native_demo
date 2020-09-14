@@ -13,6 +13,7 @@ import 'package:flutter_native_demo/widgets/take_picture_page.dart';
 import 'package:flutter_native_demo/widgets/file_list_preview.dart';
 import 'package:flutter_native_demo/widgets/make_a_call.dart';
 import 'package:flutter_native_demo/widgets/read_ocr_live.dart';
+// import 'package:flutter_native_demo/widgets/flutter_bluetooth.dart';
 
 class LaunchScreen extends StatefulWidget {
   @override
@@ -101,7 +102,8 @@ class _LaunchScreenState extends State<LaunchScreen> {
                               children: [
                                 Icon(Icons.camera),
                                 Text("Launch Camera",
-                                    style: TextStyle(fontWeight: FontWeight.bold))
+                                    style:
+                                        TextStyle(fontWeight: FontWeight.bold))
                               ],
                             )),
                       )),
@@ -125,7 +127,8 @@ class _LaunchScreenState extends State<LaunchScreen> {
                                 children: [
                                   Icon(Icons.bluetooth),
                                   Text("Bluetooth",
-                                      style: TextStyle(fontWeight: FontWeight.bold))
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold))
                                 ],
                               )),
                         )),
@@ -145,7 +148,9 @@ class _LaunchScreenState extends State<LaunchScreen> {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Icon(Icons.image),
-                                  Text("OpenCv", style: TextStyle(fontWeight: FontWeight.bold))
+                                  Text("OpenCv",
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold))
                                 ],
                               )),
                         )),
@@ -173,16 +178,37 @@ class _LaunchScreenState extends State<LaunchScreen> {
                         MaterialPageRoute(builder: (context) => ScreenRec()))),
               ],
             ),
-            Row(
-              children: [
-                attachmentList.length >= 1
-                    ? Padding(
-                        padding: const EdgeInsets.all(10),
-                        child: FileListPreview(attachmentList, _removeImage),
-                      )
-                    : SizedBox(),
-              ],
-            )
+            attachmentList.length >= 1
+                ? Padding(
+                    padding: const EdgeInsets.all(10),
+                    child: FileListPreview(attachmentList, _removeImage),
+                  )
+                : SizedBox(),
+            MakeACall(),
+            ReadOCRLive(getValue),
+            GestureDetector(
+              child: Padding(
+                  padding: const EdgeInsets.only(top: 40, left: 130),
+                  child: Card(
+                    elevation: 15,
+                    child: Container(
+                        height: 80,
+                        width: 100,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(Icons.camera),
+                            Text("Bluetooth devices",
+                                style: TextStyle(fontWeight: FontWeight.bold))
+                          ],
+                        )),
+                  )),
+              onTap: () => Navigator.popAndPushNamed(
+                //pushNamed(
+                context,
+                FlutterBlueApp.routeName,
+              ),
+            ),
           ],
         ),
       ),
