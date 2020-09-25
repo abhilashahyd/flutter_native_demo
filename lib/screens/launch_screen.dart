@@ -179,6 +179,11 @@ class _LaunchScreenState extends State<LaunchScreen> {
                         MaterialPageRoute(builder: (context) => ScreenRec()))),
               ],
             ),
+          Row(
+            children:[
+
+            ]
+          )
             // attachmentList.length >= 1
             //     ? Padding(
             //         padding: const EdgeInsets.all(10),
