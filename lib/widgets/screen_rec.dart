@@ -1,13 +1,13 @@
-import 'dart:async';
-import 'dart:io';
+// import 'dart:async';
+// import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screen_recording/flutter_screen_recording.dart';
 import 'package:quiver/async.dart';
-import 'package:permission_handler/permission_handler.dart';
+// import 'package:permission_handler/permission_handler.dart';
 import 'package:open_file/open_file.dart';
 
-
+// void main() => runApp(MyApp());
 
 class ScreenRec extends StatefulWidget {
   @override
@@ -18,12 +18,18 @@ class _ScreenRecState extends State<ScreenRec> {
   bool recording = false;
   int _time = 0;
 
-
+  requestPermissions() async {
+    // await PermissionHandler().requestPermissions([
+    //   PermissionGroup.storage,
+    //   PermissionGroup.photos,
+    //   PermissionGroup.microphone,
+    // ]);
+  }
 
   @override
   void initState() {
     super.initState();
-//   requestPermissions();
+    requestPermissions();
     startTimer();
   }
 
@@ -49,7 +55,7 @@ class _ScreenRecState extends State<ScreenRec> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('Screen Recorder'),
+          title: const Text('Flutter Screen Recording'),
         ),
         body: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -57,25 +63,25 @@ class _ScreenRecState extends State<ScreenRec> {
             Text('Time: $_time\n'),
             !recording
                 ? Center(
-              child: RaisedButton(
-                child: Text("Record Screen"),
-                onPressed: () => startScreenRecord(false),
-              ),
-            )
+                    child: RaisedButton(
+                      child: Text("Record Screen"),
+                      onPressed: () => startScreenRecord(false),
+                    ),
+                  )
                 : Container(),
             !recording
                 ? Center(
-              child: RaisedButton(
-                child: Text("Record Screen & audio"),
-                onPressed: () => startScreenRecord(true),
-              ),
-            )
+                    child: RaisedButton(
+                      child: Text("Record Screen & audio"),
+                      onPressed: () => startScreenRecord(true),
+                    ),
+                  )
                 : Center(
-              child: RaisedButton(
-                child: Text("Stop Record"),
-                onPressed: () => stopScreenRecord(),
-              ),
-            )
+                    child: RaisedButton(
+                      child: Text("Stop Record"),
+                      onPressed: () => stopScreenRecord(),
+                    ),
+                  )
           ],
         ),
       ),

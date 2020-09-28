@@ -8,7 +8,7 @@ import 'package:flutter_cache_manager/flutter_cache_manager.dart';
 import 'package:opencv/opencv.dart';
 import 'package:opencv/core/core.dart';
 
-
+// void main() => runApp(MyApp());
 
 class OpenCv extends StatefulWidget {
   @override
@@ -74,7 +74,7 @@ class _OpenCvState extends State<OpenCv> {
           break;
         case 'GaussianBlur':
           res =
-          await ImgProc.gaussianBlur(await file.readAsBytes(), [45, 45], 0);
+              await ImgProc.gaussianBlur(await file.readAsBytes(), [45, 45], 0);
           break;
         case 'medianBlur':
           res = await ImgProc.medianBlur(await file.readAsBytes(), 45);
@@ -89,7 +89,7 @@ class _OpenCvState extends State<OpenCv> {
           break;
         case 'sqrBoxFilter':
           res =
-          await ImgProc.sqrBoxFilter(await file.readAsBytes(), -1, [1, 1]);
+              await ImgProc.sqrBoxFilter(await file.readAsBytes(), -1, [1, 1]);
           break;
         case 'filter2D':
           res = await ImgProc.filter2D(await file.readAsBytes(), -1, [2, 2]);
@@ -177,10 +177,13 @@ class _OpenCvState extends State<OpenCv> {
     return MaterialApp(
       home: Scaffold(
           appBar: AppBar(
-            title: const Text('OpenCv'),
+            title: const Text('Plugin example app'),
           ),
           body: Column(
             children: <Widget>[
+              Center(
+                child: Text('Running on: $_platformVersion\n'),
+              ),
               Text("Before"),
               preloaded
                   ? image
@@ -211,6 +214,7 @@ class _OpenCvState extends State<OpenCv> {
                       'boxFilter',
                       'sqrBoxFilter',
                       'filter2D',
+                      'threshold',
                       'dilate',
                       'erode',
                       'morphologyEx',

@@ -101,7 +101,7 @@ class ScanResultTile extends StatelessWidget {
             context,
             'Manufacturer Data',
             getNiceManufacturerData(
-                result.advertisementData.manufacturerData) ??
+                    result.advertisementData.manufacturerData) ??
                 'N/A'),
         _buildAdvRow(
             context,
@@ -145,7 +145,7 @@ class ServiceTile extends StatelessWidget {
       return ListTile(
         title: Text('Service'),
         subtitle:
-        Text('0x${service.uuid.toString().toUpperCase().substring(4, 8)}'),
+            Text('0x${service.uuid.toString().toUpperCase().substring(4, 8)}'),
       );
     }
   }
@@ -160,11 +160,11 @@ class CharacteristicTile extends StatelessWidget {
 
   const CharacteristicTile(
       {Key key,
-        this.characteristic,
-        this.descriptorTiles,
-        this.onReadPressed,
-        this.onWritePressed,
-        this.onNotificationPressed})
+      this.characteristic,
+      this.descriptorTiles,
+      this.onReadPressed,
+      this.onWritePressed,
+      this.onNotificationPressed})
       : super(key: key);
 
   @override
