@@ -7,6 +7,7 @@ import 'package:flutter_mobile_vision/flutter_mobile_vision.dart';
 import 'package:flutter_native_demo/widgets/barcode_scanner.dart';
 import 'package:flutter_native_demo/widgets/detect_face.dart';
 import 'package:flutter_native_demo/widgets/flutter_bluetooth.dart';
+import 'package:flutter_native_demo/widgets/image_to_text.dart';
 import 'package:flutter_native_demo/widgets/opencv.dart';
 import 'package:flutter_native_demo/widgets/screen_rec.dart';
 import 'package:flutter_native_demo/widgets/take_picture_page.dart';
@@ -110,6 +111,31 @@ class _LaunchScreenState extends State<LaunchScreen> {
                       )),
                   onTap: () => _showCamera(),
                 ),
+                GestureDetector(
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 40, left: 10),
+                    child: Card(
+                      elevation: 15,
+                      child: Container(
+                        height: 90,
+                        width: 100,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(Icons.image),
+                            Text("Image to Text",
+                            style: TextStyle(fontWeight: FontWeight.bold))
+                          ],
+                        ),
+                      ),
+                    ) ,
+                  ),
+                  onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => ImageText(),)),
+
+                )
               ],
             ),
             Row(

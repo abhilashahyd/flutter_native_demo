@@ -20,10 +20,11 @@ class ImageText extends StatefulWidget {
 class _ImageTextState extends State<ImageText> {
   String fileName;
   List<Filter> filters = presetFiltersList;
-  File imageFile;
-
+  var imageFile;
+  final ImagePicker _picker = ImagePicker();
   Future getImage(context) async {
-    imageFile = await ImagePicker.pickImage(source: ImageSource.gallery);
+    imageFile = await _picker.getImage(source: ImageSource.gallery);
+
     fileName = basename(imageFile.path);
     var image = imageLib.decodeImage(imageFile.readAsBytesSync());
     print(image);
