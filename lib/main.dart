@@ -17,9 +17,7 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: LaunchScreen(),
-      routes: {
-        FlutterBlueApp.routeName: (context) => FlutterBlueApp(),
-      },
+      
     );
   }
 }
