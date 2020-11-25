@@ -6,7 +6,6 @@ import 'package:camera/camera.dart';
 import 'package:flutter_mobile_vision/flutter_mobile_vision.dart';
 import 'package:flutter_native_demo/widgets/barcode_scanner.dart';
 import 'package:flutter_native_demo/widgets/detect_face.dart';
-import 'package:flutter_native_demo/widgets/flutter_bluetooth.dart';
 import 'package:flutter_native_demo/widgets/image_to_text.dart';
 import 'package:flutter_native_demo/widgets/opencv.dart';
 import 'package:flutter_native_demo/widgets/screen_rec.dart';
@@ -14,7 +13,9 @@ import 'package:flutter_native_demo/widgets/take_picture_page.dart';
 import 'package:flutter_native_demo/widgets/file_list_preview.dart';
 import 'package:flutter_native_demo/widgets/make_a_call.dart';
 import 'package:flutter_native_demo/widgets/read_ocr_live.dart';
-// import 'package:flutter_native_demo/widgets/flutter_bluetooth.dart';
+
+import 'MainPage.dart';
+
 
 class LaunchScreen extends StatefulWidget {
   @override
