@@ -37,6 +37,8 @@ dependencies:
   permission_handler: ^5.0.1+1
   flutter_blue: ^0.7.2
   photofilters: ^2.0.1
+  flutter_bluetooth_serial: ^0.2.2
+  scoped_model: ^1.1.0
   image_picker: ^0.6.7+12
 
 

@@ -162,7 +162,7 @@ class _LaunchScreenState extends State<LaunchScreen> {
                     onTap: () => Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => FlutterBlueApp()))),
+                            builder: (context) => MainPage()))),
                 GestureDetector(
                     child: Padding(
                         padding: const EdgeInsets.only(top: 40, left: 10),
